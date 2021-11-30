@@ -1,0 +1,283 @@
+{
+	"info": {
+		"_postman_id": "9c62acc2-3f57-40f3-a899-62eba9bb03f7",
+		"name": "Hasmik Agh's Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Register User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"email\": \"test6@mail.ru\",\r\n    \"name\": \"Has\",\r\n    \"password\": \"1234\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks/rest/doregister?",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"doregister"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check user is registered",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 231\", function () {\r",
+							"    pm.response.to.have.status(231);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"query\":\"Has\"}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks/rest/magicsearch",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"magicsearch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update User data",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\":\"Has\",\r\n  \"email\": \"test6@mail.ru\",\r\n  \"hobby\":\"Стрельба из лука, Настолки\",\r\n  \"adres\":\"адрес 1\",\r\n  \"name1\":\"Hasmik\",\r\n  \"surname1\":\"AGh\",\r\n  \"fathername1\":\"\",\r\n  \"cat\":\"Маруся\",\r\n  \"dog\":\"Ушастый\",\r\n  \"parrot\":\"Васька\",\r\n  \"cavy\":\"Кто ты?\",\r\n  \"hamster\":\"Хомяк\",\r\n  \"squirrel\":\"Белая горячка к нам пришла\",\r\n  \"phone\":\"333 33 33\",\r\n  \"inn\":\"123456789012\",\r\n  \"gender\":\"f\",\r\n  \"birthday\":\"01.01.1900\",\r\n  \"date_start\":\"11.11.2000\"\r\n} ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks/rest/fullupdateuser",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"fullupdateuser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Avatar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "test6@mail.ru",
+							"type": "text"
+						},
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": "x6C0arK6n/Has.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://users.bugred.ru/tasks/rest/addavatar",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"addavatar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Avatar",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://users.bugred.ru/tasks/rest/deleteavatar?email=test6@mail.ru",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"deleteavatar"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "test6@mail.ru"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://users.bugred.ru/tasks/rest/deleteuser?email=test6@mail.ru",
+					"protocol": "http",
+					"host": [
+						"users",
+						"bugred",
+						"ru"
+					],
+					"path": [
+						"tasks",
+						"rest",
+						"deleteuser"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "test6@mail.ru"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
